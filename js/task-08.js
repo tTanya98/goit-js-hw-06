@@ -12,4 +12,14 @@ function onFormSubmit(event) {
         console.log('onFormSubmit -> name', name);
         console.log('onFormSubmit -> value', value);
     });
+    
+    const {
+        elements: { email, password } 
+    } = event.currentTarget;
+
+    if (email.value === "" || password.value == "") {
+        return alert ("Please fill in all fields!");
+        };
+
+    event.currentTarget.reset();
 }
