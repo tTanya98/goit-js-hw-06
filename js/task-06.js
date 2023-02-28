@@ -9,11 +9,10 @@ console.log ('input in focus');
 };
 
 function handleInputBlur(event) {
- if (this.getAttribute('data-length') > this.value.length) {
- this.classList.remove('valid');
- this.classList.add('invalid');
- } else {
-    this.classList.remove('invalid');
-    this.classList.add('valid');
- }
-};
+   if (event.target.value.trim().length === Number(formInput.getAttribute('data-length')))
+    {
+   event.target.style.outline = ' 3px solid green';
+   } else {
+      event.target.style.outline = ' 3px solid red';
+   }
+  };
